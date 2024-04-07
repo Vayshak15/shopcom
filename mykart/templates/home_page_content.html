@@ -1,0 +1,83 @@
+{% load static %}
+
+    <!-- Featured Products -->
+
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            {% for product in featured_products %}
+            <div class="col-4">
+            <a href="{% url 'detail_product' product.id  %}"> <img src="{{ product.image.url}}"> </a>
+            <h4>{{ product.title }}</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>${{ product.price }}</p>
+        </div>
+            {% endfor %}
+
+        <h2 class="title">Latest Products</h2>
+        <div class="row">
+            {% for product in latest_products %}
+            <div class="col-4">
+            <a href="{% url 'detail_product' product.id  %}"> <img src="{{ product.image.url}}"> </a>
+            <h4>{{ product.title }}</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>${{ product.price }}</p>
+        </div>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+    <!-- Offer -->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{%static 'images/Applewatch.png'%}" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on ShopCom</p>
+                    <h1>Applewatch</h1>
+                    <small>The Applewatch fearures a 39.9%larger (than Mi Band 3) AMOLED color full-touch display
+                        with adjustable brightness, so everything is clear as can be.<br></small>
+                    <a href="{{product.url}}" class="btn">Buy Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial -->
+
+<div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="{%static 'images/visa.png'%}">
+                </div>
+                <div class="col-5">
+                    <img src="{%static 'images/mastercard.png'%}">
+                </div>
+                <div class="col-5">
+                    <img src="{%static 'images/phonepay.png'%}">
+                </div>
+                <div class="col-5">
+                    <img src="{%static 'images/paypal.png'%}">
+                </div>
+                <div class="col-5">
+                    <img src="{%static 'images/amazonpay.png'%}">
+                </div>
+
+            </div>
+        </div>
+    </div>
